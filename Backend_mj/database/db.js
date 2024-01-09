@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize'
 
-const db = new Sequelize('mandbus', 'root', '', {
+const db = new Sequelize('prueba', 'root', '', {
     host: 'localhost',
     dialect: 'mysql'
 })

@@ -19,7 +19,7 @@ try {
 }
 
 app.get('/', (req, res) => {
-    res.send('HOLA MUNDO')
+    res.send('Servidor corriendo ')
 })
 
 app.listen(8000, () => {

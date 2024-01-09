@@ -1,7 +1,23 @@
 import express from 'express'
 import { createDatosGenerales, createMovimientos, getAllCuantia, getAllDelitos, getAllEmisor, getAllEntidades, getAllFuero, getAllJuzgados, getAllMandato, getAllModalidadDurango, getAllMotCancelacion, getAllMunicipios, getAllMunicipiosId, getAllProcExtradicion, getAllSexo, getAllTipoProceso } from '../controllers/MandamientoController.js'
+import { createRegistro, deleteRegistro, getAllRegistros, getRegistro, updateRegistro } from '../controllers/RegistrarController.js'
 
 const router = express.Router()
+
+router.get('/', getAllRegistros)
+router.get('/:id',getRegistro)
+router.post('/', createRegistro)
+router.put('/:id',updateRegistro)
+router.delete('/:id',deleteRegistro)
+
+
+
+
+
+//metodos del crud...     getAllBlos----    getBlog ---   createBlog---    updateBlog---    deleteBlog---
+// metos del ejercicio    getAllRegistros   getRegistro   createRegistro   updateRegistro   deleteRegistro
+
+
 
 //RUTAS PARA MOSTRAR
 router.get('/emisores', getAllEmisor)
