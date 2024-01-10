@@ -1,8 +1,61 @@
 import Menu from "../menu/MenuLateral";
 import Titulo from "../menu/Titulo";
+import axios from "axios"
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../src/index.css";
 
 const Registrar = () => {
+
+    //objeto principal
+    const [registro, setRegistro] = useState({
+    INSTITUTO:"",
+    MANDATO:"",
+    ESTATUS:"",
+    MUNICIPIO: "",
+    NOMBRE: "",
+    
+    APATERNO: "",
+    AMATERNO: "",
+    ALIAS: "",
+    EDAD: "",
+    SEXO: "",
+
+    ESTATURA: "",
+    PESO: "",
+    JUZGADO: "",
+    OFICIO: "",
+    FOFICIO: "",
+    
+    CAUSA: "",
+    CUANTIA: "",
+    NACIONALIDAD: "",
+    ANTEOJOS: "",
+    FECHA: ""   
+    });
+
+    const handleChange = (e)=>{
+      formatoDia()  
+      setUser((prev)=>({ ...prev, [e.target.name]: e.target.value }))
+            
+     };
+
+     const handleClick = async (e)=>{
+      e.preventDefault();
+     try{
+      await axios.post("http://localhost:8081/registrar", registro );
+      console.log(create)
+      alert("El nuevo registro ha sido guardado correctamente ")
+      navigate("/")
+  
+     }catch(err) {
+        console.log(err)
+     }
+  }
+
+
+
+
   return (
     <>
       <Titulo></Titulo>
@@ -10,19 +63,21 @@ const Registrar = () => {
 
       <div className="contenedor">
         <div className="contenedor_principal">
+        <div className="row">
           <div className="mb-12 row">
-            <h3>Formulario principal para el registro</h3>
-
-            <div className="col-sm-6">
+          
+          <h3>Formulario principal para el registro</h3>
+          <div className="col-sm-6">
               <label className="form-label">
                 Instituto que remite la informacion
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="nombre"
+                id="ID_ESTADO_EMISOR"
                 name="ID_ESTADO_EMISOR"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -31,12 +86,13 @@ const Registrar = () => {
               <input
                 type="text"
                 className="form-control"
-                id="nombre"
+                id="NO_MANDATO"
                 name="NO_MANDATO"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
-          </div>
+          
 
           <div className="mb-3 row">
             <div className="col-sm-6">
@@ -44,8 +100,10 @@ const Registrar = () => {
               <input
                 type="text"
                 className="form-control"
-                id="nombre"
+                id="ESTATUS"
+                name="ESTATUS"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -55,8 +113,9 @@ const Registrar = () => {
                 type="text"
                 className="form-control"
                 name="ID_MUNICIPIO"
-                id="nombre"
+                id="ID_MUNICIPIO"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
           </div>
@@ -69,8 +128,9 @@ const Registrar = () => {
                 type="text"
                 className="form-control"
                 name="NOMBRE"
-                id="nombre"
+                id="NOMBRE"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -80,8 +140,9 @@ const Registrar = () => {
                 type="text"
                 className="form-control"
                 name="APATERNO"
-                id="nombre"
+                id="APATERNO"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -91,8 +152,9 @@ const Registrar = () => {
                 type="text"
                 className="form-control"
                 name="AMATERNO"
-                id="nombre"
+                id="AMATERNO"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -102,8 +164,9 @@ const Registrar = () => {
                 type="text"
                 className="form-control"
                 name="ALIAS"
-                id="nombre"
+                id="ALIAS"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
           </div>
@@ -115,8 +178,9 @@ const Registrar = () => {
                 type="text"
                 className="form-control"
                 name="EDAD"
-                id="nombre"
+                id="EDAD"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -126,8 +190,9 @@ const Registrar = () => {
                 type="text"
                 className="form-control"
                 name="ID_SEXO"
-                id="nombre"
+                id="ID_SEXO"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -139,6 +204,7 @@ const Registrar = () => {
                 name="ESTATURA"
                 id="nombre"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -150,6 +216,7 @@ const Registrar = () => {
                 name="PESO"
                 id="nombre"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
           </div>
@@ -164,6 +231,7 @@ const Registrar = () => {
                 name="ID_JUZGADO"
                 id="nombre"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -175,6 +243,7 @@ const Registrar = () => {
                 name="OFICIO_JUZGADO"
                 id="nombre"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -186,6 +255,7 @@ const Registrar = () => {
                 name="FECHA_OFICIO"
                 id="nombre"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
           </div>
@@ -199,6 +269,7 @@ const Registrar = () => {
                 name="NO_CAUSA"
                 id="nombre"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -210,6 +281,7 @@ const Registrar = () => {
                 id="nombre"
                 name="ID_TIPO_CUANTIA"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -221,6 +293,7 @@ const Registrar = () => {
                 name="ID_NACIONALIDAD"
                 id="nombre"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
           </div>
@@ -234,9 +307,26 @@ const Registrar = () => {
                 name="ID_USO_ANTEOJOS"
                 id="nombre"
                 placeholder=""
+                onChange={handleChange}
               ></input>
             </div>
           </div>
+
+          <div className="mb-3 row">
+            <div className="col-sm-6">
+            <button type="submit" className="btn btn-primary" onClick={handleClick}>Registrar</button>
+            </div>
+            <div className="col-sm-6">
+            <Link to="/" className="btn btn-info"> Inicio</Link>
+            </div>
+          </div>
+          
+
+          </div>
+          </div>
+     
+
+
         </div>
       </div>
     </>
