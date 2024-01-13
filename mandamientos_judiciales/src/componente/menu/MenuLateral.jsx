@@ -23,6 +23,13 @@ const MenuLateral = () => {
             </div>               
           </div>
 
+          <div className="mb-3 row">              
+            <div className="col-sm-2">
+            <Link to="/Prueba">Prueba</Link>            
+            </div>               
+          </div>
+
+  
          <div className="mb-3 row">              
             <div className="col-sm-2">
             <Link to="/Delitos">Delitos</Link>

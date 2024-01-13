@@ -10,6 +10,9 @@ import Proceso from "./componente/registro/Proceso"
 import Inicio from "./componente/registro/Inicio_registrar"
 
 import Menu_inter from "./componente/registro/Menu_intermedio"
+import Prueba from "./componente/registro/RegistroEj"
+
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -26,7 +29,7 @@ function App() {
             <Route path="/Proceso" element={<Proceso/>}></Route>
             <Route path="/Minter" element={<Menu_inter/>}></Route>
             
-             
+            <Route path="/Prueba" element={<Prueba/>}></Route>
 
           </Routes>
        </BrowserRouter>
