@@ -7,23 +7,25 @@ import "../../../src/index.css";
 
 const Registrar = () => {
   const navigate = useNavigate();
-    //objeto principal
-    //  ID_ALTERNA          ---CONSECUTIVO
-    //  ID_ESTADO_EMISOR    ---
-    //  ID_EMISOR           ---CATALOGO
-    //  ID_MUNICIPIO        ---CATALOGO
-    //  ID_PAIS             ---CATALOGO -- MEXICO
-    //  NO_MANDATO
-    //  NOMBRE APATERNO AMATERNO ALIAS EDAD ESTATURA PESO
-    //  ID_SEXO     ---CATALOGO
-    //  ID_USO_ANTEOJOS     -- S=SI N=NO
-    //  ID_NACIONALIDAD     ---CATALOGO
-    //  ID_ESTADO_JUZGADO
-    //  ID_JUZGADO           ---CATALOGO
-    //  NO_CAUSA
-    //  OFICIO_JUZGADO
-    //  FECHA_OFICIO
-    //  ID_TIPO_CUANTIA        ---CATALOGO
+    //objeto principal                                                 sistema smirna
+    //  ID_ALTERNA      --------------------------------------------  numero consecutivo
+    //  ID_ESTADO_EMISOR            ---------------- por default ---  durando  ************************
+    //  ID_EMISOR      instituto que remite la informacion       ---  catalogo emisor ****   
+    //  ID_MUNICIPIO                                             ---  catalogo
+    //  ID_PAIS                     ---------------- por default ---  mexico  ************************                             ---  mexico
+    //  NO_MANDATO     ----------------------------------------- ---  ingresado 
+   
+    //  NOMBRE APATERNO AMATERNO ALIAS EDAD  ESTATURA PESO   ------  INGRESADOS   
+    //  ID_SEXO                                                  --- catalogo
+    //  ID_USO_ANTEOJOS                                          --- S=SI N=NO
+    
+    //  ID_NACIONALIDAD                                          --- catalogo
+    //  ID_ESTADO_JUZGADO                                        --- durango = 10
+    //  ID_JUZGADO     --------------------------------------------- catalogo 
+    //  NO_CAUSA       --------------------------------------------- ingresado
+    //  OFICIO_JUZGADO --------------------------------------------- ingresado
+    //  FECHA_OFICIO    -------------   --------    ---------  ----- seleccion de fecha
+    //  ID_TIPO_CUANTIA  ------------------------------------------- catalogo 
     // ****************************************
     //  ***************************************
                 //  variables completas      *****
@@ -403,7 +405,8 @@ const Registrar = () => {
 
 
               </select>
-            </div>
+            </div>    
+            
             </div>
                     
               <div className="col-sm-6">
@@ -412,7 +415,7 @@ const Registrar = () => {
                   <button type="submit" className="btn btn-primary" >Registrar</button>
                   </div>
                   <div className="col-sm-6">
-                  <Link to="/Inicio" className="btn btn-info"> Inicio</Link>
+                  <Link to="/Inicio" className="btn btn-info">Siguiente</Link>
                   </div>
                 </div>
          

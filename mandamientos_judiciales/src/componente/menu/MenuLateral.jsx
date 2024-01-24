@@ -13,33 +13,65 @@ const MenuLateral = () => {
 
           <div className="mb-3 row">              
             <div className="col-sm-2">
-            <Link to="/Inicio">Inicio de registro</Link>            
+            <Link to="/Inicio">Inicio registro</Link>            
             </div>               
           </div>
 
           <div className="mb-3 row">              
             <div className="col-sm-2">
-            <Link to="/">Registrar</Link>            
+            <Link to="/">1Registrar</Link>            
             </div>               
-          </div>
+          </div>     
 
           <div className="mb-3 row">              
             <div className="col-sm-2">
-            <Link to="/Prueba">Prueba</Link>            
-            </div>               
-          </div>
-
-  
-         <div className="mb-3 row">              
-            <div className="col-sm-2">
-            <Link to="/Delitos">Delitos</Link>
+            <Link to="/Proceso">2Proceso_reg</Link>
             
             </div>               
          </div> 
 
          <div className="mb-3 row">              
             <div className="col-sm-2">
-            <Link to="/Proceso">Proceso</Link>
+            <Link to="/Delitos">3Delitos_reg</Link>
+            
+            </div>               
+         </div>         
+
+         <div className="mb-3 row">              
+            <div className="col-sm-2">
+            <Link to="/Domicilio">4Domicilio_reg</Link>
+            
+            </div>               
+         </div> 
+         <div className="mb-3 row">              
+            <div className="col-sm-2">
+            <Link to="/o_nombre">5O_nombres_reg</Link>
+            
+            </div>               
+         </div> 
+         <div className="mb-3 row">              
+            <div className="col-sm-2">
+            <Link to="/amparos">6Amparos_reg</Link>
+            
+            </div>               
+         </div> 
+         <div className="mb-3 row">              
+            <div className="col-sm-2">
+            <Link to="/ministerial">7ministerial_reg</Link>
+            
+            </div>               
+         </div> 
+
+         <div className="mb-3 row">              
+            <div className="col-sm-2">
+            <Link to="/colaboracion">8Colaboracion_reg</Link>
+            
+            </div>               
+         </div> 
+
+         <div className="mb-3 row">              
+            <div className="col-sm-2">
+            <Link to="/Proceso">9Imagen_reg</Link>
             
             </div>               
          </div> 
@@ -49,7 +81,6 @@ const MenuLateral = () => {
             <Link to="/Ver">Ver Registros</Link>
             </div>               
          </div>
-
 
          <div className="mb-3 row">              
             <div className="col-sm-2">
