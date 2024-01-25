@@ -71,7 +71,7 @@ const MenuLateral = () => {
 
          <div className="mb-3 row">              
             <div className="col-sm-2">
-            <Link to="/Proceso">9Imagen_reg</Link>
+            <Link to="/imagen">9Imagen_reg</Link>
             
             </div>               
          </div> 

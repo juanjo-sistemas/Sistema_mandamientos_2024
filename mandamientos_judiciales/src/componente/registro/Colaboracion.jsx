@@ -56,6 +56,7 @@ const Colaboracion = () => {
                     id="NUMERO_COLABORACION"
                     name="NUMERO_COLABORACION"
                     placeholder=""
+                    onChange={handleChange}
                   ></input>
                 </div>
 
@@ -67,6 +68,7 @@ const Colaboracion = () => {
                     id="NO_OFICIO"
                     name="NO_OFICIO"
                     placeholder=""
+                    onChange={handleChange}
                   ></input>
                 </div>
 
@@ -79,6 +81,7 @@ const Colaboracion = () => {
                       id="FECHA_OFICIO"
                       name="FECHA_OFICIO"
                       placeholder=""
+                      onChange={handleChange}
                     ></input>
                   </div>
 
@@ -90,6 +93,7 @@ const Colaboracion = () => {
                       name="FECHA_INICIO"
                       id="FECHA_INICIO"
                       placeholder=""
+                      onChange={handleChange}
                     ></input>
                   </div>
 
@@ -101,6 +105,7 @@ const Colaboracion = () => {
                       name="FECHA_TERMINO"
                       id="FECHA_TERMINO"
                       placeholder=""
+                      onChange={handleChange}
                     ></input>
                   </div>
 
@@ -114,6 +119,7 @@ const Colaboracion = () => {
                       name="ID_ESTADO_COLABORA"
                       id="ID_ESTADO_COLABORA"
                       placeholder=""
+                      onChange={handleChange}
                     ></input>
                   </div>
                 </div>
@@ -129,6 +135,7 @@ const Colaboracion = () => {
                       id="ID_EMISOR_COLABORA"
                       name="ID_EMISOR_COLABORA"
                       placeholder=""
+                      onChange={handleChange}
                     ></input>
                   </div>
 
@@ -140,6 +147,7 @@ const Colaboracion = () => {
                       name="ACUERDO_CONVENIO"
                       id="ACUERDO_CONVENIO"
                       placeholder=""
+                      onChange={handleChange}
                     ></input>
                   </div>
 
@@ -151,6 +159,7 @@ const Colaboracion = () => {
                       name="RAZON_COLABORACION"
                       id="RAZON_COLABORACION"
                       placeholder=""
+                      onChange={handleChange}
                     ></input>
                   </div>
 
@@ -162,8 +171,9 @@ const Colaboracion = () => {
                       type="text"
                       className="form-control"
                       name="GRAVEDAD_CASO"
-                      id="nombre"
+                      id="GRAVEDAD_CASO"
                       placeholder=""
+                      onChange={handleChange}
                     ></input>
                   </div>
                 </div>

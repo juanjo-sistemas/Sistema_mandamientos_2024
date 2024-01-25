@@ -2,7 +2,7 @@
 const express = require ('express');
 const mysql = require ('mysql');
 const cors = require('cors');
-
+const multer  = require('multer')
 const app = express();
 app.use(cors());
 app.use(express.json())
@@ -433,20 +433,15 @@ db.query("INSERT INTO registro (nombre, apellido, edad) VALUES (?,?,?)",
      
 
 
-             // colaboracion
-
-
-      
+        // colaboracion      
         app.post ("/colaboracion", (req,res)=>{ 
-            procesado=0;     
-            id_fuente=10;        
-        
+           
             //  variables completas
             const  ID_ALTERNA             ="1"; 
             const  ID_ESTADO_EMISOR       ="1";
             const  ID_EMISOR              ="10";             //CATALOGO
                        
-            NUMERO_COLABORACION= req.body.NUMERO_COLABORACION;
+            NUMERO_COLABORACION =req.body.NUMERO_COLABORACION;
             NO_OFICIO= req.body.NO_OFICIO;
             FECHA_OFICIO= req.body.FECHA_OFICIO;
             FECHA_INICIO= req.body.FECHA_INICIO;
@@ -455,12 +450,10 @@ db.query("INSERT INTO registro (nombre, apellido, edad) VALUES (?,?,?)",
             ID_EMISOR_COLABORA= req.body.ID_EMISOR_COLABORA;
             ACUERDO_CONVENIO= req.body.ACUERDO_CONVENIO;
             RAZON_COLABORACION= req.body.RAZON_COLABORACION;
-            GRAVEDAD_CASO= req.body.GRAVEDAD_CASO;
-           
-                                   
-                   
-            db.query("INSERT INTO reg_colaboracion_temporal   (ID_ALTERNA, ID_ESTADO_EMISOR, ID_EMISOR, NUMERO_COLABORACION, NO_OFICIO, FECHA_OFICIO, FECHA_INICIO, FECHA_TERMINO, ID_ESTADO_COLABORA, ID_EMISOR_COLABORA, ACUERDO_CONVENIO, RAZON_COLABORACION, GRAVEDAD_CASO) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                                                              [ID_ALTERNA, ID_ESTADO_EMISOR, ID_EMISOR, NUMERO_COLABORACION, NO_OFICIO, FECHA_OFICIO, FECHA_INICIO, FECHA_TERMINO, ID_ESTADO_COLABORA, ID_EMISOR_COLABORA, ACUERDO_CONVENIO, RAZON_COLABORACION, GRAVEDAD_CASO],
+            GRAVEDAD_CASO= req.body.GRAVEDAD_CASO;          
+                                       
+            db.query("INSERT INTO reg_colaboracion_temporal (ID_ALTERNA, ID_ESTADO_EMISOR, ID_EMISOR, NUMERO_COLABORACION, NO_OFICIO, FECHA_OFICIO, FECHA_INICIO, FECHA_TERMINO, ID_ESTADO_COLABORA, ID_EMISOR_COLABORA, ACUERDO_CONVENIO, RAZON_COLABORACION, GRAVEDAD_CASO) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                                                            [ID_ALTERNA, ID_ESTADO_EMISOR, ID_EMISOR, NUMERO_COLABORACION, NO_OFICIO, FECHA_OFICIO, FECHA_INICIO, FECHA_TERMINO, ID_ESTADO_COLABORA, ID_EMISOR_COLABORA, ACUERDO_CONVENIO, RAZON_COLABORACION, GRAVEDAD_CASO],
                 (err,result) =>{
                     if(err){
                         console.log(err);
@@ -475,6 +468,51 @@ db.query("INSERT INTO registro (nombre, apellido, edad) VALUES (?,?,?)",
      
 
 
+           
+           
+
+// imagen    
+const storage = multer.diskStorage({
+   destination: (req, file, cb)=>{
+    db(null, 'public/imagenes')
+   },
+   filename: (req, file, cb)=>{
+   
+   }
+
+});
+
+app.post ("/imagen", (req,res)=>{ 
+           
+    //  variables completas
+    const  ID_ALTERNA             ="1"; 
+    const  ID_ESTADO_EMISOR       ="1";
+    const  ID_EMISOR              ="10";             //CATALOGO
+    
+    DESCRIP_IMAGEN = req.body.NO_OFICIO;
+    TIPO_IMAGEN    = req.body.NO_OFICIO;
+    GRUPO          = req.body.NO_OFICIO;
+    IMAGEN         = req.body.NO_OFICIO;
+
+   
+
+
+
+    GRAVEDAD_CASO= req.body.GRAVEDAD_CASO;          
+                               
+    db.query("INSERT INTO reg_imagen_temporal (ID_ALTERNA, ID_ESTADO_EMISOR, ID_EMISOR, NUMERO_COLABORACION, NO_OFICIO, FECHA_OFICIO, FECHA_INICIO, FECHA_TERMINO, ID_ESTADO_COLABORA, ID_EMISOR_COLABORA, ACUERDO_CONVENIO, RAZON_COLABORACION, GRAVEDAD_CASO) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                                                    [ID_ALTERNA, ID_ESTADO_EMISOR, ID_EMISOR, NUMERO_COLABORACION, NO_OFICIO, FECHA_OFICIO, FECHA_INICIO, FECHA_TERMINO, ID_ESTADO_COLABORA, ID_EMISOR_COLABORA, ACUERDO_CONVENIO, RAZON_COLABORACION, GRAVEDAD_CASO],
+        (err,result) =>{
+            if(err){
+                console.log(err);
+            }else{   
+              //  db.query("INSERT INTO control_alterna (id_alterna, id_fuente, fecha, hora, procesado ) VALUES (?,?,?,?,?)",[ id_alterna, id_fuente, fe, hora, procesado ])
+              //  res.send("registrado")   
+            }
+        }
+    )
+    
+    })
 
 
 app.listen(8081,()=>{

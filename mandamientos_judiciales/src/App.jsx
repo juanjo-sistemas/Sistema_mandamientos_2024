@@ -15,6 +15,7 @@ import Otro_nomb from "./componente/registro/Otros_nombres"
 import Amparos from "./componente/registro/Amparos"
 import Ministerial from "./componente/registro/Ministerial"
 import Colaboracion from "./componente/registro/Colaboracion"
+import Imagen from "./componente/registro/Imagen"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,7 @@ function App() {
             <Route path="/ministerial" element={<Ministerial/>}></Route>
             <Route path="/colaboracion" element={<Colaboracion/>}></Route>
             <Route path="/Prueba" element={<Prueba/>}></Route>
+            <Route path="/imagen" element={<Imagen/>}></Route>
 
           </Routes>
        </BrowserRouter>
